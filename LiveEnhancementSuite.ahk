@@ -680,7 +680,7 @@ Hotkey, !b, buplicate
 Hotkey, ^+h, directshyper
 ;Hotkey, !g, debugshortcut
 
-Hotkey, !f, freezetrack
+Hotkey, ^+f, freezetrack
 Hotkey, !+f, flattentrack
 
 if (fliptabfunction = 1) {
