@@ -682,6 +682,7 @@ Hotkey, ^+h, directshyper
 
 Hotkey, ^+f, freezetrack
 Hotkey, !+f, flattentrack
+Hotkey, ^+b, bounceinplace
 
 if (fliptabfunction = 1) {
 	Hotkey, Tab, PianoRoll
@@ -1564,12 +1565,23 @@ else {
 	WinmenuSelectItem,,, Edit, Freeze Track
 }
 return
+
 flattentrack:
 if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
 	WinmenuSelectItem,,, 2&, 29&
 }
 else {
 	WinmenuSelectItem,,, Edit, Flatten Track
+}
+return
+
+bounceinplace:
+if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
+	;WinmenuSelectItem,,, 2&, 28&
+	return
+}
+else {
+	WinmenuSelectItem,,, Edit, Bounce Track in Place
 }
 return
 
