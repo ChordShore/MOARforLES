@@ -684,6 +684,8 @@ Hotkey, ^+f, freezetrack
 Hotkey, !+f, flattentrack
 Hotkey, ^+b, bounceinplace
 
+Hotkey, ^+e, slicetonewmiditrack
+
 if (fliptabfunction = 1) {
 	Hotkey, Tab, PianoRoll
 	Hotkey, LShift & Tab, SessionView
@@ -1582,6 +1584,16 @@ if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
 }
 else {
 	WinmenuSelectItem,,, Edit, Bounce Track in Place
+}
+return
+
+slicetonewmiditrack:
+if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
+	;WinmenuSelectItem,,, 2&, 28&
+	return
+}
+else {
+	WinmenuSelectItem,,, Create, Slice to New MIDI Track
 }
 return
 
