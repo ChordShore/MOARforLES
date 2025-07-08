@@ -686,6 +686,8 @@ Hotkey, ^+b, bounceinplace
 
 Hotkey, ^+e, slicetonewmiditrack
 
+Hotkey, !r, editinfotext
+
 if (fliptabfunction = 1) {
 	Hotkey, Tab, PianoRoll
 	Hotkey, LShift & Tab, SessionView
@@ -1594,6 +1596,16 @@ if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
 }
 else {
 	WinmenuSelectItem,,, Create, Slice to New MIDI Track
+}
+return
+
+editinfotext:
+if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
+	;WinmenuSelectItem,,, 2&, 28&
+	return
+}
+else {
+	WinmenuSelectItem,,, Edit, Edit Info Text
 }
 return
 
