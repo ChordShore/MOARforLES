@@ -684,6 +684,9 @@ Hotkey, ^+f, freezetrack
 Hotkey, !+f, flattentrack
 Hotkey, ^+b, bounceinplace
 
+Hotkey, ^h, helpview
+Hotkey, ^+h, filemanager
+
 Hotkey, ^+e, slicetonewmiditrack
 
 Hotkey, !r, editinfotext
@@ -1586,6 +1589,26 @@ if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
 }
 else {
 	WinmenuSelectItem,,, Edit, Bounce Track in Place
+}
+return
+
+helpview:
+if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
+	;WinmenuSelectItem,,, 2&, 28&
+	return
+}
+else {
+	WinmenuSelectItem,,, View, Help View
+}
+return
+
+filemanager:
+if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
+	;WinmenuSelectItem,,, 2&, 28&
+	return
+}
+else {
+	WinmenuSelectItem,,, File, Manage Files
 }
 return
 
