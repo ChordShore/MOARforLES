@@ -21,6 +21,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	colortracks_enable := result[2]
 	}
 
+	if (RegExMatch(line, "colortracks_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	colortracks_hotkey := result[2]
+	}
+
 	if (RegExMatch(line, "cleartracks_enable\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
@@ -29,6 +34,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 		exitapp
 		}
 	cleartracks_enable := result[2]
+	}
+
+	if (RegExMatch(line, "cleartracks_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	cleartracks_hotkey := result[2]
 	}
 
 	if (RegExMatch(line, "buplicate_enable\s=\s") != 0){
@@ -41,6 +51,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	buplicate_enable := result[2]
 	}
 
+	if (RegExMatch(line, "buplicate_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	buplicate_hotkey := result[2]
+	}
+
 	if (RegExMatch(line, "directshyper_enable\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
@@ -49,6 +64,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 		exitapp
 		}
 	directshyper_enable := result[2]
+	}
+
+	if (RegExMatch(line, "directshyper_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	directshyper_hotkey := result[2]
 	}
 
 	if (RegExMatch(line, "debugshortcut_enable\s=\s") != 0){
@@ -61,6 +81,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	debugshortcut_enable := result[2]
 	}
 
+	if (RegExMatch(line, "debugshortcut_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	debugshortcut_hotkey := result[2]
+	}
+
 	if (RegExMatch(line, "freezetrack_enable\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
@@ -69,6 +94,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 		exitapp
 		}
 	freezetrack_enable := result[2]
+	}
+
+	if (RegExMatch(line, "freezetrack_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	freezetrack_hotkey := result[2]
 	}
 
 	if (RegExMatch(line, "flattentrack_enable\s=\s") != 0){
@@ -81,6 +111,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	flattentrack_enable := result[2]
 	}
 
+	if (RegExMatch(line, "flattentrack_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	flattentrack_hotkey := result[2]
+	}
+
 	if (RegExMatch(line, "bounceinplace_enable\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
@@ -89,6 +124,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 		exitapp
 		}
 	bounceinplace_enable := result[2]
+	}
+
+	if (RegExMatch(line, "bounceinplace_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	bounceinplace_hotkey := result[2]
 	}
 
 	if (RegExMatch(line, "helpview_enable\s=\s") != 0){
@@ -101,6 +141,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	helpview_enable := result[2]
 	}
 
+	if (RegExMatch(line, "helpview_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	helpview_hotkey := result[2]
+	}
+
 	if (RegExMatch(line, "filemanager_enable\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
@@ -109,6 +154,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 		exitapp
 		}
 	filemanager_enable := result[2]
+	}
+
+	if (RegExMatch(line, "filemanager_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	filemanager_hotkey := result[2]
 	}
 
 	if (RegExMatch(line, "slicetonewmiditrack_enable\s=\s") != 0){
@@ -121,6 +171,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	slicetonewmiditrack_enable := result[2]
 	}
 
+	if (RegExMatch(line, "slicetonewmiditrack_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	slicetonewmiditrack_hotkey := result[2]
+	}
+
 	if (RegExMatch(line, "editinfotext_enable\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
@@ -129,6 +184,11 @@ Loop, Read, %A_ScriptDir%\settings.ini
 		exitapp
 		}
 	editinfotext_enable := result[2]
+	}
+
+	if (RegExMatch(line, "editinfotext_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	editinfotext_hotkey := result[2]
 	}
 
 

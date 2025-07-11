@@ -46,51 +46,51 @@ Hotkey, ^!w, closeall
 
 
 if (colortracks_enable = 1){
-Hotkey, !c, colortracks
+Hotkey, %colortracks_hotkey%, colortracks
 }
 
 if (cleartracks_enable = 1){
-Hotkey, !x, cleartracks
+Hotkey, %cleartracks_hotkey%, cleartracks
 }
 
 if (buplicate_enable = 1){
-Hotkey, !b, buplicate
+Hotkey, %buplicate_hotkey%, buplicate
 }
 
 if (directshyper_enable = 1){
-Hotkey, ^+h, directshyper
+Hotkey, %directshyper_hotkey%, directshyper
 }
 
 if (debugshortcut_enable = 1){
-;Hotkey, !g, debugshortcut
+;Hotkey, %debugshortcut_hotkey%, debugshortcut
 }
 
 if (freezetrack_enable = 1){
-Hotkey, ^+f, freezetrack
+Hotkey, %freezetrack_hotkey%, freezetrack
 }
 
 if (flattentrack_enable = 1){
-Hotkey, !+f, flattentrack
+Hotkey, %flattentrack_hotkey%, flattentrack
 }
 
 if (bounceinplace_enable = 1){
-Hotkey, ^+b, bounceinplace
+Hotkey, %bounceinplace_hotkey%, bounceinplace
 }
 
 if (helpview_enable = 1){
-Hotkey, ^h, helpview
+Hotkey, %helpview_hotkey%, helpview
 }
 
 if (filemanager_enable = 1){
-Hotkey, ^+h, filemanager
+Hotkey, %filemanager_hotkey%, filemanager
 }
 
 if (slicetonewmiditrack_enable = 1){
-Hotkey, ^+e, slicetonewmiditrack
+Hotkey, %slicetonewmiditrack_hotkey%, slicetonewmiditrack
 }
 
 if (editinfotext_enable = 1){
-Hotkey, !r, editinfotext
+Hotkey, %editinfotext_hotkey%, editinfotext
 }
 
 
