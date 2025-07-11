@@ -43,18 +43,57 @@ Hotkey, ^w, closewindow
 Hotkey, ^!w, closeall
 }
 
+
+
+if (colortracks_enable = 1){
 Hotkey, !c, colortracks
+}
+
+if (cleartracks_enable = 1){
 Hotkey, !x, cleartracks
+}
+
+if (buplicate_enable = 1){
 Hotkey, !b, buplicate
+}
+
+if (directshyper_enable = 1){
 Hotkey, ^+h, directshyper
+}
+
+if (debugshortcut_enable = 1){
 ;Hotkey, !g, debugshortcut
+}
+
+if (freezetrack_enable = 1){
 Hotkey, ^+f, freezetrack
+}
+
+if (flattentrack_enable = 1){
 Hotkey, !+f, flattentrack
+}
+
+if (bounceinplace_enable = 1){
 Hotkey, ^+b, bounceinplace
+}
+
+if (helpview_enable = 1){
 Hotkey, ^h, helpview
+}
+
+if (filemanager_enable = 1){
 Hotkey, ^+h, filemanager
+}
+
+if (slicetonewmiditrack_enable = 1){
 Hotkey, ^+e, slicetonewmiditrack
+}
+
+if (editinfotext_enable = 1){
 Hotkey, !r, editinfotext
+}
+
+
 
 if (fliptabfunction = 1) {
 	Hotkey, Tab, PianoRoll

@@ -8,6 +8,134 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	line := StrReplace(A_LoopReadLine, "`r", "")
 	line := StrReplace(line, "`n", "")
 
+	;New Hotkeys
+	;==========================================
+
+	if (RegExMatch(line, "colortracks_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "colortracks_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	colortracks_enable := result[2]
+	}
+
+	if (RegExMatch(line, "cleartracks_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "cleartracks_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	cleartracks_enable := result[2]
+	}
+
+	if (RegExMatch(line, "buplicate_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "buplicate_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	buplicate_enable := result[2]
+	}
+
+	if (RegExMatch(line, "directshyper_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "directshyper_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	directshyper_enable := result[2]
+	}
+
+	if (RegExMatch(line, "debugshortcut_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "debugshortcut_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	debugshortcut_enable := result[2]
+	}
+
+	if (RegExMatch(line, "freezetrack_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "freezetrack_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	freezetrack_enable := result[2]
+	}
+
+	if (RegExMatch(line, "flattentrack_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "flattentrack_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	flattentrack_enable := result[2]
+	}
+
+	if (RegExMatch(line, "bounceinplace_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "bounceinplace_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	bounceinplace_enable := result[2]
+	}
+
+	if (RegExMatch(line, "helpview_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "helpview_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	helpview_enable := result[2]
+	}
+
+	if (RegExMatch(line, "filemanager_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "filemanager_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	filemanager_enable := result[2]
+	}
+
+	if (RegExMatch(line, "slicetonewmiditrack_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "slicetonewmiditrack_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	slicetonewmiditrack_enable := result[2]
+	}
+
+	if (RegExMatch(line, "editinfotext_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "editinfotext_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	editinfotext_enable := result[2]
+	}
+
+
+
+	;Classic Features
+	;==========================================
+
 	if (RegExMatch(line, "autoadd\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
