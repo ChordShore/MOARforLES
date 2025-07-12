@@ -1,4 +1,4 @@
-Menu, Tray, NoStandard
+﻿Menu, Tray, NoStandard
 Menu, Tray, Add, Configure Settings, settingsini
 Menu, Tray, Add, Configure Menu, menuini
 Menu, Tray, Add,

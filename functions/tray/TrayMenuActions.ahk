@@ -1,4 +1,4 @@
-loop, 1 { ; (again, loop, 1 does nothing)
+﻿loop, 1 { ; (again, loop, 1 does nothing)
 
 listkeys: ;these are built in AHK GUIs, so this simple command needed to be added to the tray menu as well.
 KeyHistory
