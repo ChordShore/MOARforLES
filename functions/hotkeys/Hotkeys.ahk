@@ -1,16 +1,10 @@
 loop, 1{ ;creating hotkeys
 If (disableloop = 1){
-
 HotKey, ^+m, midiclip
 }
 
 HotKey, %pianorollmacro% & ~Lbutton, doubleclick
-if (usectrlaltsinstead = 0){
-	Hotkey, ^+s, savenewver
-	}
-Else{
-	Hotkey, ^!s, savenewver
-	}
+
 Hotkey, !e, envelopemode
 
 if (addctrlshiftz = 1){
@@ -43,7 +37,17 @@ Hotkey, ^w, closewindow
 Hotkey, ^!w, closeall
 }
 
+if (saveacopy_classic_enable = 1){
+Hotkey, %saveacopy_classic_hotkey%, saveacopy_classic
+}
 
+if (saveacopy_native_enable = 1){
+Hotkey, %saveacopy_native_hotkey%, saveacopy_native
+}
+
+if (collectallandsave_enable = 1){
+Hotkey, %collectallandsave_hotkey%, collectallandsave
+}
 
 if (colortracks_enable = 1){
 Hotkey, %colortracks_hotkey%, colortracks

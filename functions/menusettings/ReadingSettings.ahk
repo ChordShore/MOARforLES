@@ -11,6 +11,51 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	;New Hotkeys
 	;==========================================
 
+	if (RegExMatch(line, "saveacopy_classic_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "saveacopy_classic_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	saveacopy_classic_enable := result[2]
+	}
+
+	if (RegExMatch(line, "saveacopy_classic_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	saveacopy_classic_hotkey := result[2]
+	}
+
+	if (RegExMatch(line, "saveacopy_native_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "saveacopy_native_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	saveacopy_native_enable := result[2]
+	}
+
+	if (RegExMatch(line, "saveacopy_native_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	saveacopy_native_hotkey := result[2]
+	}
+
+	if (RegExMatch(line, "collectallandsave_enable\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	if !(result[2] = 0 or result[2] = 1){
+		msgbox % "Invalid parameter for " . Chr(34) "collectallandsave_enable" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+		run, %A_ScriptDir%\settings.ini
+		exitapp
+		}
+	collectallandsave_enable := result[2]
+	}
+
+	if (RegExMatch(line, "collectallandsave_hotkey\s=\s") != 0){
+	result := StrSplit(line, "=", A_Space)
+	collectallandsave_hotkey := result[2]
+	}
+
 	if (RegExMatch(line, "colortracks_enable\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
 	if !(result[2] = 0 or result[2] = 1){
@@ -256,25 +301,25 @@ Loop, Read, %A_ScriptDir%\settings.ini
 	disableloop := result[2]
 	}
 	
-	if (RegExMatch(line, "saveasnewver\s=\s") != 0){
-	result := StrSplit(line, "=", A_Space)
-	if !(result[2] = 0 or result[2] = 1){
-		msgbox % "Invalid parameter for " . Chr(34) "saveasnewver" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
-		run, %A_ScriptDir%\settings.ini
-		exitapp
-		}
-	saveasnewver := result[2]
-	}
+	;if (RegExMatch(line, "saveasnewver\s=\s") != 0){
+	;result := StrSplit(line, "=", A_Space)
+	;if !(result[2] = 0 or result[2] = 1){
+	;	msgbox % "Invalid parameter for " . Chr(34) "saveasnewver" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+	;	run, %A_ScriptDir%\settings.ini
+	;	exitapp
+	;	}
+	;saveasnewver := result[2]
+	;}
 	
-	if (RegExMatch(line, "usectrlaltsinstead\s=\s") != 0){
-	result := StrSplit(line, "=", A_Space)
-	if !(result[2] = 0 or result[2] = 1){
-		msgbox % "Invalid parameter for " . Chr(34) "usectrlaltsinstead" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
-		run, %A_ScriptDir%\settings.ini
-		exitapp
-		}
-	usectrlaltsinstead := result[2]
-	}
+	;if (RegExMatch(line, "usectrlaltsinstead\s=\s") != 0){
+	;result := StrSplit(line, "=", A_Space)
+	;if !(result[2] = 0 or result[2] = 1){
+	;	msgbox % "Invalid parameter for " . Chr(34) "usectrlaltsinstead" . Chr(34) . ". Valid parameters are: 1 and 0. The program will shut down now."
+	;	run, %A_ScriptDir%\settings.ini
+	;	exitapp
+	;	}
+	;usectrlaltsinstead := result[2]
+	;}
 	
 	if (RegExMatch(line, "altgrmarker\s=\s") != 0){
 	result := StrSplit(line, "=", A_Space)
@@ -441,9 +486,14 @@ Loop, Read, %A_ScriptDir%\settings.ini
 
 ; alright, so this section asks the user to update the settings.ini with the one included in the package if some values are missing.
 ; these are the values I deem "nescesary"
-if ((autoadd = "") or (resetbrowsertobookmark = "") or (bookmarkx = "") or (bookmarky = "") or (windowedcompensationpx = "") or (disableloop = "") or (saveasnewver = "") or (usectrlaltsinstead = "")or (usectrlaltsinstead = "") or (middleclicktopan = "") or (addctrlshiftz = "") or (0todelete = "") or (absolutereplace = "") or (smarticon = "") or (pianorollmacro = "") or (pianosearch = "") or (enabledebug = "") or (addtostartup = "")){
+if ((autoadd = "") or (resetbrowsertobookmark = "") or (bookmarkx = "") or (bookmarky = "") or (windowedcompensationpx = "") or (disableloop = "") or (middleclicktopan = "") or (addctrlshiftz = "") or (0todelete = "") or (absolutereplace = "") or (smarticon = "") or (pianorollmacro = "") or (pianosearch = "") or (enabledebug = "") or (addtostartup = "")){
 gosub, settingsinibad
 }
+
+;These were removed since the features were deprecated and replaced by saveacopy_classic.
+;The script will not build if these checks are included.
+;(saveasnewver = "") or
+;(usectrlaltsinstead = "")or (usectrlaltsinstead = "") or
 
 ; this section checks for the remaining variables; ones that were added in recent updates or betas. They aren't really nescesary for the program to function.
 ; In case you're wondering; missing variables default to a "false" response in AHK - so none of the features with missing settings.ini entries will work until you add them to the file.

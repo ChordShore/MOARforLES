@@ -24,7 +24,7 @@ if (stampselect != ""){
 	}
 return
 
-savenewver: 
+saveacopy_classic: 
 ; this section does the ctrl+alt+s command and also includes the section that tries to parse the filename in a way that makes sense.
 ; I'm not very good at these, but this spaghetti approach works 99% of the time, so it would be ok.
 ; Ever since LES 1.0, it's gone through many different iterations.
@@ -35,7 +35,7 @@ WinWaitActive, ahk_class #32770,,2 ;this waits for the save dialog thing to show
 if (ErrorLevel = 1){
 	Return
 }
-If (saveasnewver = 1){
+If (saveacopy_classic_enable = 1){
 ClipSaved := ClipboardAll
 clipboard =  ;
 SendInput, {Ctrl down}{a}{Ctrl up}
@@ -203,6 +203,24 @@ WinmenuSelectItem,,, Create, Add Locator
 }
 return
 
+return
+
+saveacopy_native:
+if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
+	WinmenuSelectItem,,, 2&, 28&
+}
+else {
+	WinmenuSelectItem,,, File, Save a Copy...
+}
+return
+
+collectallandsave:
+if !(InStr(wintitleoutput, "Live 11", CaseSensitive := false) = 0){
+	WinmenuSelectItem,,, 2&, 28&
+}
+else {
+	WinmenuSelectItem,,, File, Collect All and Save
+}
 return
 
 freezetrack:
